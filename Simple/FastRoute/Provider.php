@@ -7,11 +7,11 @@ use FastRoute\Dispatcher;
 use Simple\FastRoute\Exceptions\HttpException;
 use Simple\FastRoute\Exceptions\NotFoundException;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;
+use Simple\Support\Provider as SupportProvider;
 
-class Provider
+class Provider implements SupportProvider
 {
     const CATCH_FILE_NAME = 'routes.cache';
-    const DEFAULT_ROUTER_PATH = 'routes/index.php';
 
     /**
      * @var \FastRoute\Dispatcher;
@@ -214,38 +214,41 @@ class Provider
     }
 
     /**
-     * Register FastRoute as router.
+     * Register FastRoute as router, and start routing.
      * 
-     * @param  callable $routeDefinitionCallback A function that get RouteCollecter as its first argument
-     *                                           for example function ($router) { ... }.
-     * @param  callable $errorHandler            A function that get a Throwable as its first argument.
      * @return void
      */
-    public static function register(callable $errorHandler = null)
+    public function register()
     {
-        $routeDefinitionCallback = function (RouteCollector $router) {
-            require_once(base_path(self::DEFAULT_ROUTER_PATH));
-        };
-
-        self::registerCustomCallback($routeDefinitionCallback, $errorHandler);
+        $this->route();
     }
 
     /**
-     * Register FastRoute as router.
-     * 
-     * @param  callable $routeDefinitionCallback A function that get RouteCollecter as its first argument
-     *                                           for example function ($router) { ... }.
-     * @param  callable $errorHandler            A function that get a Throwable as its first argument.
+     * Set custom error handler.
+     *
+     * @param  callable  $errorHandler  A function that get a Throwable as its first argument.
      * @return void
      */
-    public static function registerCustomCallback(callable $routeDefinitionCallback, callable $errorHandler = null)
+    public function withErrorHandler(callable $callback)
     {
-        (new self(
+        $this->errorHandler = $callback;
+    }
+
+    /**
+     * Create an instance of provider with all options.
+     *
+     * @param  callable $routeDefinitionCallback A function that get RouteCollecter as its first argument
+     *                                           for example function ($router) { ... }.
+     * @return void
+     */
+    public static function create(callable $routeDefinitionCallback)
+    {
+        return new self(
             $routeDefinitionCallback,
-            $errorHandler,
+            null,
             $_SERVER['REQUEST_METHOD'],
             $_SERVER['REQUEST_URI'],
             $_ENV['APP_DEBUG'] ?? false
-        ))->route();
+        );
     }
 }
