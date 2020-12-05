@@ -227,11 +227,13 @@ class Provider implements SupportProvider
      * Set custom error handler.
      *
      * @param  callable  $errorHandler  A function that get a Throwable as its first argument.
-     * @return void
+     * @return $this
      */
     public function withErrorHandler(callable $callback)
     {
         $this->errorHandler = $callback;
+
+        return $this;
     }
 
     /**
@@ -239,7 +241,7 @@ class Provider implements SupportProvider
      *
      * @param  callable $routeDefinitionCallback A function that get RouteCollecter as its first argument
      *                                           for example function ($router) { ... }.
-     * @return void
+     * @return $this
      */
     public static function create(callable $routeDefinitionCallback)
     {

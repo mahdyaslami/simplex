@@ -20,5 +20,12 @@
         "files": [
             "Simple/helpers.php"
         ]
+    },
+    "scripts": {
+        "test": ".\\vendor\\bin\\phpunit",
+        "test-fastroute": ".\\vendor\\bin\\phpunit --colors=always --configuration phpunit.xml --testsuite fastroute"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9"
     }
 }

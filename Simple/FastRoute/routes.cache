@@ -1,0 +1,14 @@
+<?php return array (
+  0 => 
+  array (
+    'GET' => 
+    array (
+      '/users' => 
+      Closure::__set_state(array(
+      )),
+    ),
+  ),
+  1 => 
+  array (
+  ),
+);
