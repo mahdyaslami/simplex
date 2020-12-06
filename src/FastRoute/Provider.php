@@ -144,6 +144,8 @@ class Provider implements SupportProvider
 
         if ($handler) {
             $handler($throwable);
+
+            return;
         }
 
         if ($throwable instanceof HttpException) {
