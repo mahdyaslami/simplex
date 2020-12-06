@@ -14,26 +14,14 @@ if (!function_exists('base_path')) {
 
 if (!function_exists('base_path')) {
     /**
-     * Get the path to the base of the install.
+     * Get the path to the base of the working directory.
      *
      * @param  string  $path
      * @return string
      */
     function base_path($path = '')
     {
-        if (isset($GLOBALS['BASE_PATH'])) {
-            $path = trim($path, '/\\');
-
-            return $GLOBALS['BASE_PATH'] . ($path ? DIRECTORY_SEPARATOR . $path : $path);
-        }
-
-        if (running_in_console()) {
-            $GLOBALS['BASE_PATH'] = getcwd();
-        } else {
-            $GLOBALS['BASE_PATH'] = realpath(getcwd());
-        }
-
-        return base_path($path);
+        return $GLOBALS['BASE_PATH'] . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 }
 
