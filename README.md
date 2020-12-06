@@ -1,2 +1,3 @@
 # simplex
-Dev environment for my PHP libraries.
+
+Library provider of simple framework.
