@@ -127,8 +127,8 @@ class Provider implements SupportProvider
         $routeInfo = $this->dispatch();
 
         $this->routeStatus = $routeInfo[0];
-        $this->routeHandler = $routeInfo[1];
-        $this->routeHandlerArguments = array_values($routeInfo[2]);
+        $this->routeHandler = $routeInfo[1] ?? null;
+        $this->routeHandlerArguments = array_values($routeInfo[2] ?? []);
     }
 
     /**

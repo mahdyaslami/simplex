@@ -55,7 +55,7 @@ final class RoutingTest extends TestCase
                 $router->addRoute('GET', '/users', [MyTestClass::class, 'index']);
             })->register();
         } catch (\Throwable $e) {
-            die(get_class($e));
+            $this->assertInstanceOf(NotFoundException::class, $e, 'There is an error in test not found error.');
         }
     }
 }
