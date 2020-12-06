@@ -7,16 +7,40 @@ use Simple\Support\Provider as SupportProvider;
 class Provider implements SupportProvider
 {
     /**
+     * Path to env.php file.
+     *
+     * @var string
+     */
+    protected $env;
+
+    /**
+     * Create bew instance of Provider.
+     *
+     * @param  string $env  Path to env.php file.
+     * @return void
+     */
+    protected function __construct($env)
+    {
+        $this->env = $env;
+    }
+
+    /**
      * Register a environment variables.
      *
      * @return void
      */
     public function register()
     {
-        $env_php = base_path('env.php');
+        $_ENV = array_change_key_case(require_once($this->env), CASE_UPPER);
+    }
 
-        if (file_exists($env_php)) {
-            $_ENV = array_change_key_case(require_once($env_php), CASE_UPPER);
-        }
+    /**
+     * Create instance of with env file.
+     *
+     * @return void
+     */
+    public static function create($env)
+    {
+        return new self($env);
     }
 }
