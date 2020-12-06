@@ -1,18 +1,13 @@
 <?php
 
 use FastRoute\RouteCollector;
-use PHPUnit\Framework\TestCase;
+use Simple\FastRoute\Exceptions\MethodNotAllowedException;
 use Simple\FastRoute\Exceptions\NotFoundException;
 use Simple\FastRoute\Provider;
+use Simple\Test\TestCase;
 
 final class RoutingTest extends TestCase
 {
-    public function get($path)
-    {
-        $_SERVER['REQUEST_METHOD'] = 'GET';
-        $_SERVER['REQUEST_URI'] = $path;
-    }
-
     /**
      * @test
      */
@@ -56,6 +51,22 @@ final class RoutingTest extends TestCase
             })->register();
         } catch (\Throwable $e) {
             $this->assertInstanceOf(NotFoundException::class, $e, 'There is an error in test not found error.');
+        }
+    }
+
+    /**
+     * @test
+     */
+    public function method_not_allowed()
+    {
+        $this->post('/users');
+
+        try {
+            Provider::create(function (RouteCollector $router) {
+                $router->addRoute('GET', '/users', [MyTestClass::class, 'index']);
+            })->register();
+        } catch (\Throwable $e) {
+            $this->assertInstanceOf(MethodNotAllowedException::class, $e, 'There is an error in test method not allowed error.');
         }
     }
 }
