@@ -31,13 +31,13 @@ class Provider implements SupportProvider
      */
     public function register()
     {
-        $_ENV = array_change_key_case(require_once($this->env), CASE_UPPER);
+        $_ENV = array_change_key_case(require($this->env), CASE_UPPER);
     }
 
     /**
      * Create instance of with env file.
      *
-     * @return void
+     * @return $this
      */
     public static function create($env)
     {
