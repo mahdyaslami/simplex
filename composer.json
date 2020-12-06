@@ -18,7 +18,7 @@
             "Simple\\": "src/"
         },
         "files": [
-            "Simple/helpers.php"
+            "src/helpers.php"
         ]
     },
     "scripts": {
