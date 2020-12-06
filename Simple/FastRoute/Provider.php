@@ -2,7 +2,6 @@
 
 namespace Simple\FastRoute;
 
-use FastRoute\RouteCollector;
 use FastRoute\Dispatcher;
 use Simple\FastRoute\Exceptions\HttpException;
 use Simple\FastRoute\Exceptions\NotFoundException;
