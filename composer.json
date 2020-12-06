@@ -23,7 +23,8 @@
     },
     "scripts": {
         "test": ".\\vendor\\bin\\phpunit",
-        "test-fastroute": ".\\vendor\\bin\\phpunit --colors=always --configuration phpunit.xml --testsuite fastroute"
+        "test-fastroute": ".\\vendor\\bin\\phpunit --colors=always --configuration phpunit.xml --testsuite fastroute",
+        "test-env": ".\\vendor\\bin\\phpunit --colors=always --configuration phpunit.xml --testsuite env"
     },
     "require-dev": {
         "phpunit/phpunit": "9"
