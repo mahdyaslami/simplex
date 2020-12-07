@@ -57,6 +57,24 @@ final class RoutingTest extends TestCase
     /**
      * @test
      */
+    public function using_error_handler_work()
+    {
+        $this->get('/users/mahdi');
+
+        try {
+            Provider::create(function (RouteCollector $router) {
+                $router->addRoute('GET', '/users', [MyTestClass::class, 'index']);
+            })->withErrorHandler(function ($e) {
+                $this->assertTrue(true);
+            })->register();
+        } catch (\Throwable $e) {
+            $this->assertTrue(false, 'Error handler does not work.');
+        }
+    }
+
+    /**
+     * @test
+     */
     public function method_not_allowed()
     {
         $this->post('/users');
