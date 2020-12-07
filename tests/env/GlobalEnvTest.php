@@ -7,6 +7,8 @@ final class GlobalEnvTest extends TestCase
 {
     protected function setUp(): void
     {
+        $GLOBALS['BASE_PATH'] = dirname(dirname(__DIR__));
+
         file_put_contents(
             base_path('env.php'),
             "<?php return [
