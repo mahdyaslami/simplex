@@ -33,8 +33,8 @@ if (!function_exists('env')) {
      * 
      * For getting a value only send $key parameter.
      * 
-     * @param string $key
-     * @param mixed $value
+     * @param  string  $key
+     * @param  mixed   $value
      * @return mixed
      */
     function env($key, $value = null)
