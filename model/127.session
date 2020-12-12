@@ -1,0 +1,13 @@
+window_sizes 1366 715 433 928 563 104
+
+diagrams
+  active  classdiagram_ref 128767 // diagram
+    928 563 100 A4 0 0
+end
+show_stereotypes
+selected operation_ref 130815 // getData
+open
+  class_ref 128255 // Provider
+  class_ref 129279 // Validator
+end
+end
