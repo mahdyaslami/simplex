@@ -145,8 +145,7 @@ ${members}}
 	
 	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}, ${p1}${v1}${)}${type}
 {
-  ${body}}
-"
+  ${body}}"
 	
 	
       end
@@ -181,8 +180,7 @@ ${members}}
 	
 	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}${type}
 {
-  ${body}}
-"
+  ${body}}"
 	
 	
       end
