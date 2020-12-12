@@ -1,5 +1,5 @@
 format 223
-"unknown" // unknown
+"internal" // internal
   revision 1
   modified_by 127 "Sweeter"
   // class settings
@@ -31,7 +31,7 @@ format 223
    end
   
   php_dir "<unknown>"
-  classview 128639 "unknown"
+  classview 128639 "internal"
     
     classdiagramsettings member_max_width 0 end
     

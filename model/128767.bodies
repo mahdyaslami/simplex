@@ -1,4 +1,3 @@
 class MethodNotAllowedException
 !!!129919.php!!!	createWithMessage(in method : , in path : )
-
         return new self(sprintf('`%s` method not allowd for `%s` path.', $method, $path), 405);

@@ -54,9 +54,7 @@ ${definition}
       php_src "<?php
 
 ${namespace}
-${definition}
-
-"
+${definition}"
       associated_elems
 	class_ref 128767 // MethodNotAllowedException
       end
@@ -101,6 +99,7 @@ ${definition}
       cpp_decl ""
       java_decl ""
       php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+    //
 ${members}}
 "
       python_2_2 python_decl ""
@@ -108,13 +107,21 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 128383 // <generalisation>
+	relation 128383 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 128383 // <generalisation>
+	  b parent class_ref 128639 // \Exception
+      end
     end
 
     class 128767 "MethodNotAllowedException"
       visibility package 
       cpp_decl ""
       java_decl ""
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} 
+{
 ${members}}
 "
       python_2_2 python_decl ""
