@@ -1,0 +1,471 @@
+format 223
+"FastRoute" // src::FastRoute
+  revision 1
+  modified_by 127 "Sweeter"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  php_dir "C:\\xampp\\htdocs\\p\\simplex\\src/FastRoute/"
+  php_namespace "Simple\\FastRoute"
+  deploymentview 128383 "FastRoute"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128383 "Provider"
+      stereotype "source"
+      php_src "<?php
+
+${namespace}
+
+use FastRoute\\Dispatcher;
+use Simple\\FastRoute\\Exceptions\\HttpException;
+use Simple\\FastRoute\\Exceptions\\NotFoundException;
+use Simple\\FastRoute\\Exceptions\\MethodNotAllowedException;
+use Simple\\Support\\Provider as SupportProvider;
+${definition}
+
+"
+      associated_elems
+	class_ref 128383 // Provider
+      end
+    end
+  end
+
+  classview 128383 "FastRoute"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128383 "Provider"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128255 // <realization>
+	relation 128255 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 128255 // <realization>
+	  b parent class_ref 128255 // Provider
+      end
+
+      attribute 128255 "CATCH_FILE_NAME"
+	const_attribute package explicit_type ""
+	init_value " 'routes.cache'"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 128383 "dispatcher"
+	protected explicit_type "\\FastRoute\\Dispatcher;"
+	init_value " null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+@var ${type}
+"
+      end
+
+      attribute 128511 "routeDefinitionCallback"
+	protected explicit_type "callable"
+	init_value " null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+A callable that use RouteCollector for create routes.
+
+@var ${type}
+"
+      end
+
+      attribute 128639 "routeHandler"
+	protected explicit_type "callable"
+	init_value " null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+A callable that handle current route action.
+
+@var ${type}
+"
+      end
+
+      attribute 128767 "routeHandlerArguments"
+	protected explicit_type "array"
+	init_value " []"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+Arguments of current routeHandler.
+
+@var ${type}
+"
+      end
+
+      attribute 128895 "errorHandler"
+	protected explicit_type "callable"
+	init_value " null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+A callable for exception handling which except an exception as the first argument.
+
+@var ${type}
+"
+      end
+
+      attribute 129023 "path"
+	protected explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+Http request path.
+
+@var ${type}
+"
+      end
+
+      attribute 129151 "method"
+	protected explicit_type "string"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+Http request method.
+
+@var ${type}
+"
+      end
+
+      attribute 129279 "cacheDisabled"
+	protected explicit_type "bool"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment "
+Specify using cache or not.
+
+@var ${type}
+"
+      end
+
+      operation 128511 "__construct"
+	protected explicit_return_type "void"
+	nparams 5
+	  param in name "routeDefinitionCallback" explicit_type "callable"
+	  param in name "errorHandler" explicit_type "callable"
+	    defaultvalue "null"
+	  param in name "method" explicit_type "string"
+	  param in name "path" explicit_type "string"
+	  param in name "cacheDisabled" explicit_type "bool"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Create new instance of Provider.
+
+@param  ${t0} ${p0} 
+@param  ${t1} ${p1}
+@return ${type}
+"
+      end
+
+      operation 128639 "createDispatcher"
+	protected explicit_return_type "void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Create a cache dispatcher.
+
+@return ${type}
+"
+      end
+
+      operation 128767 "dispatch"
+	protected explicit_return_type "array"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Create dispatcher and execute.
+
+@return ${type}
+"
+      end
+
+      operation 128895 "search"
+	protected explicit_return_type "void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Search and intilize search results.
+
+@return ${type}
+"
+      end
+
+      operation 129023 "callErrorHandler"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "throwable" explicit_type "\\Throwable"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Call error handler if exist, otherwise throw exception.
+
+@param  ${t0} ${p0}
+@return ${type}
+
+@throws \\Throwable
+"
+      end
+
+      operation 129151 "callRouteHandler"
+	protected explicit_return_type "void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Call route handler.
+
+@return ${type}
+
+@todo TODO: Create a service container and use it.
+"
+      end
+
+      operation 129279 "getRoutingException"
+	protected explicit_return_type "HttpException|void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Decides what error to return based on the search results.
+
+@return ${type}
+"
+      end
+
+      operation 129407 "route"
+	public explicit_return_type "void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Decide what to do for a route.
+
+@return ${type}
+"
+      end
+
+      operation 129535 "register"
+	public explicit_return_type "void"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Register FastRoute as router, and start routing.
+
+@return ${type}
+"
+      end
+
+      operation 129663 "withErrorHandler"
+	public explicit_return_type "$this"
+	nparams 1
+	  param in name "callback" explicit_type "callable"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Set custom error handler.
+
+@param  ${t1}  $errorHandler  A function that get a Throwable as its first argument.
+@return ${type}
+"
+      end
+
+      operation 129791 "create"
+	class_operation public explicit_return_type "$this"
+	nparams 1
+	  param in name "routeDefinitionCallback" explicit_type "callable"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Create an instance of provider with all options.
+
+@param  ${t0} ${p0} A function that get RouteCollecter as its first argument
+                                          for example function ($router) { ... }.
+@return ${type}
+"
+      end
+    end
+  end
+
+  package_ref 128639 // Exceptions
+end

@@ -1,0 +1,10 @@
+class Provider
+!!!128127.php!!!	__construct(in env : string) : void
+
+        $this->env = $env;
+!!!128255.php!!!	register() : void
+
+        $_ENV = array_change_key_case(require($this->env), CASE_UPPER);
+!!!128383.php!!!	create(in env : ) : $this
+
+        return new self($env);

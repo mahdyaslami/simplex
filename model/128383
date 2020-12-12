@@ -1,0 +1,104 @@
+format 223
+"Support" // src::Support
+  revision 1
+  modified_by 127 "Sweeter"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  php_dir "C:\\xampp\\htdocs\\p\\simplex\\src/Support/"
+  php_namespace "Simple\\Support"
+  classview 128255 "Support"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 128255 "Provider"
+      visibility package stereotype "interface"
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}interface ${name}${extends} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 130175 "register"
+	public explicit_return_type "void"
+	nparams 0
+	
+	
+	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}${type}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Register a package.
+
+@return ${type}
+"
+      end
+    end
+  end
+
+  deploymentview 128639 "Support"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128895 "Provider"
+      stereotype "source"
+      php_src "<?php
+
+${namespace}
+${definition}
+
+"
+      associated_elems
+	class_ref 128255 // Provider
+      end
+    end
+  end
+end

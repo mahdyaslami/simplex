@@ -1,0 +1,15 @@
+[
+    'id' => [ unique(), max(5), min(2), required(), remove()]
+]
+
+Rules:
+true and continue validating.   ex: required, max, min, ...
+true and prevent validating.    ex: sometimes
+false and continue validating.  ex: shouldNumber, 
+false and prevent validating.   ex: required, max, min, 
+all rules can change data.      ex: excludeIf, removeIf,
+
+Validator:
+prepare and change data before validation.
+change and update data after validation.
+get validated data.
