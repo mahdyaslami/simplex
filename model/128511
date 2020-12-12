@@ -428,6 +428,8 @@ Register FastRoute as router, and start routing.
 	public explicit_return_type "$this"
 	nparams 1
 	  param in name "errorHandler" explicit_type "callable"
+	nexceptions 1
+	  exception class_ref 129151 // FrameworkTestCase
 	
 	
 	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}${type}
@@ -439,7 +441,7 @@ Register FastRoute as router, and start routing.
 	comment "
 Set custom error handler.
 
-@param  ${t1}  $errorHandler  A function that get a Throwable as its first argument.
+@param  ${type}  $errorHandler  A function that get a Throwable as its first argument.
 @return ${type}
 "
       end
