@@ -30,7 +30,7 @@ format 223
   activitydiagramsettings
    end
   
-  php_dir "C:\\xampp\\htdocs\\p\\simplex\\src/Support/"
+  php_dir "/../src/Support/"
   php_namespace "Simple\\Support"
   classview 128255 "Support"
     

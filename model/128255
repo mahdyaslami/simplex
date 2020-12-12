@@ -30,7 +30,7 @@ format 223
   activitydiagramsettings
    end
   
-  php_dir "C:\\xampp\\htdocs\\p\\simplex\\src/Env/"
+  php_dir "/../src/Env/"
   php_namespace "Simple\\Env"
   deploymentview 128255 "Env"
     //deployment diagram settings

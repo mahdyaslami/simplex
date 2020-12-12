@@ -30,7 +30,7 @@ format 223
   activitydiagramsettings
    end
   
-  php_dir "C:\\xampp\\htdocs\\p\\simplex\\src/FastRoute/"
+  php_dir "/../src/FastRoute/"
   php_namespace "Simple\\FastRoute"
   deploymentview 128383 "FastRoute"
     //deployment diagram settings
@@ -427,7 +427,7 @@ Register FastRoute as router, and start routing.
       operation 129663 "withErrorHandler"
 	public explicit_return_type "$this"
 	nparams 1
-	  param in name "callback" explicit_type "callable"
+	  param in name "errorHandler" explicit_type "callable"
 	
 	
 	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}${type}

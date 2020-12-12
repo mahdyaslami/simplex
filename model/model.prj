@@ -44,6 +44,8 @@ format 223
 
   mark_for_import
   
+  stereotype "framework"
   package_ref 128127 // src
 
+  package_ref 128767 // unknown
 end

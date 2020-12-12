@@ -31,6 +31,7 @@ format 223
    end
   
   php_dir "../src/"
+  php_namespace "Simple"
   deploymentview 128127 "src"
     //deployment diagram settings
     deploymentdiagramsettings

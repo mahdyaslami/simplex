@@ -82,7 +82,7 @@ class Provider
 !!!129535.php!!!	register() : void
 
         $this->route();
-!!!129663.php!!!	withErrorHandler(in callback : callable) : $this
+!!!129663.php!!!	withErrorHandler(in errorHandler : callable) : $this
 
         $this->errorHandler = $callback;
 
