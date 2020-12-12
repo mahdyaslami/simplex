@@ -32,7 +32,7 @@ format 223
   
   php_dir "/../src/Support/"
   php_namespace "Simple\\Support"
-  classview 128255 "Support"
+  classview 128255 "ServiceProvider"
     
     classdiagramsettings member_max_width 0 end
     
@@ -85,7 +85,7 @@ Register a package.
 
   end
 
-  deploymentview 128639 "Support"
+  deploymentview 128639 "ServiceProvider"
     //deployment diagram settings
     deploymentdiagramsettings
      end
