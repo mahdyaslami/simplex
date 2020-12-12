@@ -121,5 +121,10 @@ ${members}}
 	
       end
     end
+
+    classdiagram 128639 "diagram"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
   end
 end

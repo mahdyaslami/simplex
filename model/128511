@@ -467,6 +467,11 @@ Create an instance of provider with all options.
 "
       end
     end
+
+    classdiagram 128383 "diagram"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
   end
 
   package_ref 128639 // Exceptions
