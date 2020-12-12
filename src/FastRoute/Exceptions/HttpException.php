@@ -2,7 +2,7 @@
 
 namespace Simple\FastRoute\Exceptions;
 
-class HttpException extends \Exception
+class HttpException extends \Exception 
 {
     //
 }

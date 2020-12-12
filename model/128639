@@ -65,7 +65,6 @@ ${definition}"
 
 ${namespace}
 ${definition}
-
 "
       associated_elems
 	class_ref 128895 // NotFoundException
@@ -157,7 +156,8 @@ ${members}}
       visibility package 
       cpp_decl ""
       java_decl ""
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} 
+{
 ${members}}
 "
       python_2_2 python_decl ""
