@@ -51,7 +51,7 @@ format 223
     
     activitydiagramsettings
      end
-    class 128639 "\\Exception"
+    class 128639 "Exception"
       visibility package 
       cpp_decl ""
       java_decl ""
