@@ -1,0 +1,65 @@
+format 223
+
+classinstance 128131 class_ref 128259 // ArrayValidator
+  name ""   xyz 141 7 2000 life_line_z 2000
+fragment 128643 "foreach $key, $value in $data"
+  xyzwh 15 99 2010 395 280
+end
+classinstance 128771 class_ref 128259 // ArrayValidator
+  name ""   xyz 260 4 2000 life_line_z 2000
+fragment 130051 "if $value is array"
+  xyzwh 27 131 2015 331 222
+end
+durationcanvas 128259 classinstance_ref 128131 // :ArrayValidator
+  xyzwh 178 72 2015 11 736
+end
+durationcanvas 128899 classinstance_ref 128771 // :ArrayValidator
+  xyzwh 297 167 2015 11 25
+end
+durationcanvas 129155 classinstance_ref 128771 // :ArrayValidator
+  xyzwh 297 208 2015 11 25
+end
+durationcanvas 129411 classinstance_ref 128771 // :ArrayValidator
+  xyzwh 297 251 2015 11 25
+end
+durationcanvas 129667 classinstance_ref 128771 // :ArrayValidator
+  xyzwh 297 302 2010 11 39
+end
+lostfoundmsgsupport 128387 xyz 35 74 2020
+msg 128515 found_synchronous
+  from lostfoundmsgsupport_ref 128387
+  to durationcanvas_ref 128259
+  yz 72 2020 explicitmsg "validate()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 84 58
+msg 129027 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 128899
+  yz 167 2020 explicitmsg "new"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 239 153
+msg 129283 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 129155
+  yz 208 2020 explicitmsg "setData($data)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 214 194
+msg 129539 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 129411
+  yz 251 2020 explicitmsg "validate()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 228 237
+msg 129795 synchronous
+  from durationcanvas_ref 128259
+  to durationcanvas_ref 129667
+  yz 302 2020 explicitmsg "getData()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 221 288
+msg 129923 return
+  from durationcanvas_ref 129667
+  to durationcanvas_ref 128259
+  yz 330 2025 explicitmsg "validated array"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 207 316
+end
