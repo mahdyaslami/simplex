@@ -1,7 +1,7 @@
 format 223
 "Support" // src::Support
-  revision 2
-  modified_by 3 "mahdi.aslami"
+  revision 3
+  modified_by 127 "Sweeter"
   // class settings
   
   classdiagramsettings member_max_width 0 end
@@ -138,7 +138,7 @@ ${definition}
     end
 
     class 129279 "Validator"
-      visibility package stereotype "interface"
+      abstract visibility package stereotype "interface"
       cpp_decl ""
       java_decl "${comment}${@}${visibility}${static}interface ${name}${extends} {
 ${members}}
@@ -153,48 +153,18 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 130559 "setData"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "data" explicit_type ""
-	
-	
-	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)};"
-	
-	
-      end
-
       operation 130687 "validate"
 	public explicit_return_type "void"
-	nparams 0
+	nparams 2
+	  param in name "data" explicit_type ""
+	  param in name "rule" explicit_type ""
 	
 	
-	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)};"
+	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)};"
 	
 	
       end
 
-      attribute 129407 "data"
-	protected explicit_type ""
-	cpp_decl ""
-	java_decl ""
-	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
-"
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 130815 "getData"
-	public explicit_return_type "any"
-	nparams 0
-	
-	
-	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)};"
-	
-	
-      end
     end
 
     class 128131 "Request"
@@ -223,6 +193,25 @@ ${members}}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 135295 // <realization>
+	relation 135295 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 135295 // <realization>
+	  b parent class_ref 129279 // Validator
+      end
+
+      operation 137471 "validate"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "data" explicit_type ""
+	  param in name "rule" explicit_type ""
+	
+	
+	php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)};"
+	
+	
+      end
     end
   end
 end
