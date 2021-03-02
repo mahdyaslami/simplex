@@ -1,15 +1,8 @@
 window_sizes 1366 715 307 1054 565 104
 
-diagrams
-  classdiagram_ref 128767 // diagram
-    1054 565 100 A4 0 0
-  active  sequencediagram_ref 128131 // array-validation
-    1054 565 100 A3 0 0
-end
 show_stereotypes
-selected sequencediagram_ref 128131 // array-validation
+selected deploymentview_ref 128639 // ServiceProvider
 open
-  class_ref 128255 // Provider
-  classview_ref 128895 // Validation
+  deploymentview_ref 128639 // ServiceProvider
 end
 end
