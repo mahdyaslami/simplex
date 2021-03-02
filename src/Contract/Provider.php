@@ -1,6 +1,6 @@
 <?php
 
-namespace Simple\Support;
+namespace Simple\Contract;
 
 interface Provider
 {

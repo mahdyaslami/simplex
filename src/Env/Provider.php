@@ -2,9 +2,9 @@
 
 namespace Simple\Env;
 
-use Simple\Support\Provider as SupportProvider;
+use Simple\Contract\Provider as ContractProvider;
 
-class Provider implements SupportProvider
+class Provider implements ContractProvider
 {
     /**
      * Path to env.php file.

@@ -6,9 +6,9 @@ use FastRoute\Dispatcher;
 use Simple\FastRoute\Exceptions\HttpException;
 use Simple\FastRoute\Exceptions\NotFoundException;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;
-use Simple\Support\Provider as SupportProvider;
+use Simple\Contract\Provider as ContractProvider;
 
-class Provider implements SupportProvider
+class Provider implements ContractProvider
 {
     const CATCH_FILE_NAME = 'routes.cache';
 
