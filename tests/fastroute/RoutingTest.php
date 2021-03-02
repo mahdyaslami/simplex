@@ -87,6 +87,22 @@ final class RoutingTest extends TestCase
             $this->assertInstanceOf(MethodNotAllowedException::class, $e, 'There is an error in test method not allowed error.');
         }
     }
+
+    /**
+     * @test
+     */
+    public function cache_routes_when_app_debug_is_false()
+    {
+        //
+    }
+
+    /**
+     * @test
+     */
+    public function do_not_cache_routes_when_app_debug_is_true()
+    {
+        //
+    }
 }
 
 class MyTestClass
