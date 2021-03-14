@@ -57,6 +57,22 @@ final class RoutingTest extends TestCase
     /**
      * @test
      */
+    public function method_not_allowed()
+    {
+        $this->post('/users');
+
+        try {
+            Provider::create(function (RouteCollector $router) {
+                $router->addRoute('GET', '/users', [MyTestClass::class, 'index']);
+            })->register();
+        } catch (\Throwable $e) {
+            $this->assertInstanceOf(MethodNotAllowedException::class, $e, 'There is an error in test method not allowed error.');
+        }
+    }
+
+    /**
+     * @test
+     */
     public function using_error_handler_work()
     {
         $this->get('/users/mahdi');
@@ -69,22 +85,6 @@ final class RoutingTest extends TestCase
             })->register();
         } catch (\Throwable $e) {
             $this->assertTrue(false, 'Error handler does not work.');
-        }
-    }
-
-    /**
-     * @test
-     */
-    public function method_not_allowed()
-    {
-        $this->post('/users');
-
-        try {
-            Provider::create(function (RouteCollector $router) {
-                $router->addRoute('GET', '/users', [MyTestClass::class, 'index']);
-            })->register();
-        } catch (\Throwable $e) {
-            $this->assertInstanceOf(MethodNotAllowedException::class, $e, 'There is an error in test method not allowed error.');
         }
     }
 }
