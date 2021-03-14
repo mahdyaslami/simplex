@@ -1,14 +1,14 @@
 <?php
 
-namespace Simple\Validator;
+namespace Simple\Rule;
 
-use Simple\Contract\Validator;
+use Simple\Validator\Contracts\Rule;
 
-class ArrayValidator extends Validator
+class ArrayRule extends Rule
 {
-    private Validator $validator;
+    private Rule $validator;
 
-    public function __construct(Validator $validator)
+    public function __construct(Rule $validator)
     {
         $this->validator = $validator;
     }

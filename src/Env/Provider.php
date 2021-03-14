@@ -2,7 +2,7 @@
 
 namespace Simple\Env;
 
-use Simple\Contract\Provider as ContractProvider;
+use Simple\Contracts\Provider as ContractProvider;
 
 class Provider implements ContractProvider
 {

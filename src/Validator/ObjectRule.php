@@ -1,10 +1,10 @@
 <?php
 
-namespace Simple\Validator;
+namespace Simple\Rule;
 
-use Simple\Contract\Validator;
+use Simple\Validator\Contracts\Rule;
 
-class ObjectValidator extends Validator
+class ObjectRule extends Rule
 {
     private array $rules;
 

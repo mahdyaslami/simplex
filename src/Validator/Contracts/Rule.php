@@ -1,8 +1,8 @@
 <?php
 
-namespace Simple\Contract;
+namespace Simple\Validator\Contracts;
 
-abstract class Validator
+abstract class Rule
 {
     private $errors = [];
 

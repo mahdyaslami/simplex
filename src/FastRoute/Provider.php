@@ -6,7 +6,7 @@ use FastRoute\Dispatcher;
 use Simple\FastRoute\Exceptions\HttpException;
 use Simple\FastRoute\Exceptions\NotFoundException;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;
-use Simple\Contract\Provider as ContractProvider;
+use Simple\Contracts\Provider as ContractProvider;
 
 class Provider implements ContractProvider
 {

@@ -2,9 +2,9 @@
 
 namespace Simple\Validator;
 
-use Simple\Contract\Validator;
+use Simple\Validator\Contracts\Rule;
 
-class RequiredRule extends Validator
+class RequiredRule extends Rule
 {
     private string $key;
 
