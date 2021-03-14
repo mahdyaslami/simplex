@@ -243,6 +243,8 @@ class Provider implements ContractProvider
      * @param  callable $routeDefinitionCallback A function that get RouteCollecter as its first argument
      *                                           for example function ($router) { ... }.
      * @return $this
+     * 
+     * @todo TODO Fix using query string because REQUEST_URI contains query string too.
      */
     public static function create(callable $routeDefinitionCallback)
     {
