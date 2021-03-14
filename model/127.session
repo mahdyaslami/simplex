@@ -1,8 +1,8 @@
 window_sizes 1366 715 307 1054 565 104
 
 show_stereotypes
-selected deploymentview_ref 128639 // ServiceProvider
+selected deploymentview_ref 128639 // Contract
 open
-  deploymentview_ref 128639 // ServiceProvider
+  deploymentview_ref 128639 // Contract
 end
 end
