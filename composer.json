@@ -27,6 +27,7 @@
         "test-env": ".\\vendor\\bin\\phpunit --colors=always --configuration phpunit.xml --testsuite env"
     },
     "require-dev": {
+        "mockery/mockery": "^1.4",
         "phpunit/phpunit": "9"
     },
     "config": {
