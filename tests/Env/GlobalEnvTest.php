@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleTests\Env;
+
 use Simple\Env\Provider;
 use Simple\Test\TestCase;
 

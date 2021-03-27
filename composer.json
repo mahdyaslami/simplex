@@ -15,7 +15,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Simple\\": "src/"
+            "Simple\\": "src/",
+            "SimpleTests\\": "tests/"
         },
         "files": [
             "src/helpers.php"

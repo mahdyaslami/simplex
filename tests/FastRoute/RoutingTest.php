@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleTests\FastRoute;
+
 use FastRoute\RouteCollector;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;
 use Simple\FastRoute\Exceptions\NotFoundException;
@@ -92,7 +94,7 @@ final class RoutingTest extends TestCase
         try {
             Provider::create(function (RouteCollector $router) {
                 $router->addRoute('GET', '/users', function() {
-                    throw new Exception('TEST');
+                    throw new \Exception('TEST');
                 });
             })->register();
         } catch (\Throwable $e) {

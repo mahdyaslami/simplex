@@ -1,5 +1,7 @@
 <?php
 
+namespace SimpleTests\FastRoute;
+
 use Simple\FastRoute\Exceptions\HttpException;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;
 use Simple\FastRoute\Exceptions\NotFoundException;
