@@ -28,6 +28,8 @@ final class GlobalEnvTest extends TestCase
 
     /**
      * @test
+     * @covers \Simple\Env\Provider
+     * @uses ::base_path
      */
     public function get_uppercase()
     {
@@ -40,6 +42,8 @@ final class GlobalEnvTest extends TestCase
 
     /**
      * @test
+     * @covers \Simple\Env\Provider
+     * @uses ::base_path
      */
     public function get_lowercase()
     {
@@ -52,6 +56,8 @@ final class GlobalEnvTest extends TestCase
 
     /**
      * @test
+     * @covers \Simple\Env\Provider
+     * @uses ::base_path
      */
     public function get_customcase()
     {
