@@ -188,12 +188,12 @@ class Provider implements ContractProvider
     protected function getRoutingException()
     {
         if ($this->routeStatus === Dispatcher::NOT_FOUND) {
-            return NotFoundException::createWithMessage($this->path);
+            $exception = NotFoundException::createWithMessage($this->path);
+        } elseif ($this->routeStatus === Dispatcher::METHOD_NOT_ALLOWED) {
+            $exception = MethodNotAllowedException::createWithMessage($this->method, $this->path);
         }
 
-        if ($this->routeStatus === Dispatcher::METHOD_NOT_ALLOWED) {
-            return MethodNotAllowedException::createWithMessage($this->method, $this->path);
-        }
+        return $exception;
     }
 
     /**
