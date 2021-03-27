@@ -12,7 +12,7 @@ abstract class Rule
      * @param  mixed $value The value you want to validate.
      * @return void
      */
-    public abstract function validate($value): void;
+    public abstract function validate($value);
 
     /**
      * Get error of last validated value.
