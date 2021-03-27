@@ -83,6 +83,26 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
+     * @uses Simple\Test\TestCase
+     */
+    public function can_get_app_exception()
+    {
+        $this->get('/users');
+
+        try {
+            Provider::create(function (RouteCollector $router) {
+                $router->addRoute('GET', '/users', function() {
+                    throw new Exception('TEST');
+                });
+            })->register();
+        } catch (\Throwable $e) {
+            $this->assertEquals('TEST', $e->getMessage(), 'Can\'t get application exceptions.');
+        }
+    }
+
+    /**
+     * @test
+     * @covers \Simple\FastRoute\Provider
      * @uses Simple\FastRoute\Exceptions\NotFoundException
      * @uses Simple\Test\TestCase
      */
