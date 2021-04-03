@@ -4,7 +4,7 @@ namespace SimpleTests\Env;
 
 use Simple\Test\TestCase;
 
-final class HelpersTest extends TestCase
+final class HelperTest extends TestCase
 {
     /**
      * @test

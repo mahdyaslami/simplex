@@ -4,7 +4,7 @@ namespace SimpleTests;
 
 use Simple\Test\TestCase;
 
-final class HelpersTest extends TestCase
+final class HelperTest extends TestCase
 {
     /**
      * @test
@@ -14,7 +14,7 @@ final class HelpersTest extends TestCase
     {
         $GLOBALS['BASE_PATH'] = '/base_path';
 
-        $this->assertEquals('/base_path/path', base_path('path'), 'Path does not concated.');
+        $this->assertEquals('/base_path' . DIRECTORY_SEPARATOR . 'path', base_path('path'), 'Path does not concated.');
     }
 
     /**
