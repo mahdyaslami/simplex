@@ -3,18 +3,18 @@
 namespace SimpleTests\Test\TestCaseTest;
 
 use Simple\Test\TestCase;
-use Simple\Validator\Scaler\MaxRule;
+use Simple\Validator\Scaler\MaximumRule;
 
-final class MaxRuleTest extends TestCase
+final class MaximumRuleTest extends TestCase
 {
     /**
      * @test
-     * @covers \Simple\Validator\Scaler\MaxRule
+     * @covers \Simple\Validator\Scaler\MaximumRule
      * @uses \Simple\Test\TestCase
      */
     public function does_not_throw_exception_when_value_is_lower_than_maximum()
     {
-        $rule = new MaxRule(10);
+        $rule = new MaximumRule(10);
 
         $rule->validate(5);
 
@@ -23,12 +23,12 @@ final class MaxRuleTest extends TestCase
 
     /**
      * @test
-     * @covers \Simple\Validator\Scaler\MaxRule
+     * @covers \Simple\Validator\Scaler\MaximumRule
      * @uses \Simple\Test\TestCase
      */
     public function does_not_throw_exception_when_value_is_equal_to_maximum()
     {
-        $rule = new MaxRule(10);
+        $rule = new MaximumRule(10);
 
         $rule->validate(10);
 
@@ -37,12 +37,12 @@ final class MaxRuleTest extends TestCase
 
     /**
      * @test
-     * @covers \Simple\Validator\Scaler\MaxRule
+     * @covers \Simple\Validator\Scaler\MaximumRule
      * @uses \Simple\Test\TestCase
      */
     public function throw_exception_when_value_is_greater_than_maximum()
     {
-        $rule = new MaxRule(10);
+        $rule = new MaximumRule(10);
 
         try {
             $rule->validate(11);
@@ -53,12 +53,12 @@ final class MaxRuleTest extends TestCase
 
     /**
      * @test
-     * @covers \Simple\Validator\Scaler\MaxRule
+     * @covers \Simple\Validator\Scaler\MaximumRule
      * @uses \Simple\Test\TestCase
      */
     public function throw_exception_when_value_is_not_number()
     {
-        $rule = new MaxRule(10);
+        $rule = new MaximumRule(10);
 
         try {
             $rule->validate('aslami');

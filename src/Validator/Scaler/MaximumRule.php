@@ -5,7 +5,7 @@ namespace Simple\Validator\Scaler;
 use Exception;
 use Simple\Validator\Contracts\Rule;
 
-class MaxRule extends Rule
+class MaximumRule extends Rule
 {
     private $maximum;
 
