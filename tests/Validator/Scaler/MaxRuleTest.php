@@ -47,7 +47,7 @@ final class MaxRuleTest extends TestCase
         try {
             $rule->validate(11);
         } catch(\Throwable $e) {
-            $this->assertEquals('Value must be lower than 15.', $e->getMessage(), 'Greater value than maximum not allowed.');
+            $this->assertEquals('Value must be lower than 10.', $e->getMessage(), 'Greater value than maximum not allowed.');
         }
     }
 
@@ -63,7 +63,7 @@ final class MaxRuleTest extends TestCase
         try {
             $rule->validate('aslami');
         } catch(\Throwable $e) {
-            $this->assertEquals('Value should be number.', $e->getMessage(), 'None number value not allowed.');
+            $this->assertEquals('Value must be number.', $e->getMessage(), 'None number value not allowed.');
         }
     }
 }

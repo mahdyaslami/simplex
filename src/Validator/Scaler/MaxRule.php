@@ -16,12 +16,12 @@ class MaxRule extends Rule
 
     public function validate($value)
     {
-        if (is_nan($value)) {
-            throw new Exception('Value should be number.');
+        if (!is_numeric($value)) {
+            throw new Exception('Value must be number.');
         }
 
         if ($value > $this->maximum) {
-            throw new Exception("Value must be lower than {$this->maximum}");
+            throw new Exception("Value must be lower than {$this->maximum}.");
         }
     }
 }
