@@ -15,7 +15,7 @@ final class ValidationExceptionTest extends TestCase
     public function get_error_arrays()
     {
         $first = new ValidationException('first');
-        $second = new ValidationException('second', 0, $first);
+        $second = new ValidationException('second', $first);
 
         $errors = $second->errors();
 

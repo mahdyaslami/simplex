@@ -3,6 +3,7 @@
 namespace SimpleTests\Validator\Scaler;
 
 use Simple\Test\TestCase;
+use Simple\Validator\Exceptions\OnlyIntegerAllowedException;
 use Simple\Validator\Scaler\IntegerRule;
 
 final class IntegerRuleTest extends TestCase
@@ -30,10 +31,13 @@ final class IntegerRuleTest extends TestCase
     {
         $rule = new IntegerRule();
 
+        $catched = false;
         try {
             $rule->validate('aslami');
-        } catch(\Throwable $e) {
-            $this->assertEquals('Value must be integer.', $e->getMessage(), 'IntegerRule accept string as integer not allowed.');
+        } catch(OnlyIntegerAllowedException $e) {
+            $catched = true;
         }
+
+        $this->assertTrue($catched, 'Exception does not thrown for non int value.');
     }
 }
