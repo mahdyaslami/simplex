@@ -12,6 +12,7 @@ class RequiredRule extends Rule
 
     public function __construct(string $key, array $rules)
     {
+        $this->key = $key;
         $this->rules = $rules;
     }
 
