@@ -2,6 +2,7 @@
 
 namespace Simple\Validator;
 
+use Exception;
 use Simple\Validator\Contracts\Rule;
 
 class RequiredRule extends Rule
@@ -18,12 +19,16 @@ class RequiredRule extends Rule
 
     public function validate($object)
     {
-        $this->emtpyErrors();
+        $isKeyExists = false;
 
-        if (isset($object['$key']) == false) {
-            array_merge($this->errors, [
-                "'{$this->key}' key is required."
-            ]);
+        if (is_object($object)) {
+            $isKeyExists = isset($object->{$this->key});
+        } else  {
+            $isKeyExists = isset($object[$this->key]);
+        }
+
+        if (!$isKeyExists) {
+            throw new Exception("{$this->key} does not exists.");
         }
     }
 }
