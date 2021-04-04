@@ -4,8 +4,6 @@ namespace SimpleTests\Test\TestCaseTest;
 
 use Simple\Test\TestCase;
 use Simple\Validator\RequiredRule;
-use Simple\Validator\Scaler\IntegerRule;
-use Simple\Validator\Scaler\MaximumRule;
 
 final class RequiredRuleTest extends TestCase
 {
