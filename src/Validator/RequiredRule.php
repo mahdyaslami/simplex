@@ -9,12 +9,9 @@ class RequiredRule extends Rule
 {
     private string $key;
 
-    private array $rules;
-
-    public function __construct(string $key, array $rules)
+    public function __construct(string $key)
     {
         $this->key = $key;
-        $this->rules = $rules;
     }
 
     public function validate($object)
