@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Test\TestCaseTest;
+namespace SimpleTests\Validator;
 
 use Simple\Test\TestCase;
 use Simple\Validator\RequiredRule;

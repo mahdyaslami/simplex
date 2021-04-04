@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Test\TestCaseTest;
+namespace SimpleTests\Validator\Scaler;
 
 use Simple\Test\TestCase;
 use Simple\Validator\Scaler\IntegerRule;

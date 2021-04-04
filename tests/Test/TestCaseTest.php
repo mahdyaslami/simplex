@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Test\TestCaseTest;
+namespace SimpleTests\Test;
 
 use Simple\Test\TestCase;
 
