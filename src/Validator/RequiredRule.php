@@ -3,19 +3,10 @@
 namespace Simple\Validator;
 
 use Exception;
-use Simple\Validator\Contracts\Rule;
+use Simple\Validator\Contracts\KeyValueRule;
 
-class RequiredRule extends Rule
+class RequiredRule extends KeyValueRule
 {
-    private string $key;
-
-    public function __construct(string $key, array $rules = [])
-    {
-        parent::__construct($rules);
-
-        $this->key = $key;
-    }
-
     public function check($object)
     {
         $isKeyExists = false;

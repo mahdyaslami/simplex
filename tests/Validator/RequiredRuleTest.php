@@ -58,47 +58,49 @@ final class RequiredRuleTest extends TestCase
         $this->assertTrue(true);
     }
 
-    // /**
-    //  * @test
-    //  * @covers \Simple\Validator\RequiredRule
-    //  * @uses \Simple\Test\TestCase
-    //  * @uses \Simple\Validator\Scaler\IntegerRule
-    //  * @uses \Simple\Validator\Scaler\MaximumRule
-    //  */
-    // public function chain_rules_together_check_first_rule_of_array()
-    // {
-    //     $rule = new RequiredRule('id', [new IntegerRule(), new MaximumRule(10)]);
+    /**
+     * @test
+     * @covers \Simple\Validator\RequiredRule
+     * @uses \Simple\Test\TestCase
+     * @uses \Simple\Validator\Scaler\IntegerRule
+     * @uses \Simple\Validator\Scaler\MaximumRule
+     */
+    public function chain_rules_together_check_first_rule_of_array()
+    {
+        $rule = new RequiredRule('id', [new IntegerRule(), new MaximumRule(10)]);
 
-    //     try {
-    //         $rule->validate([
-    //             'id' => '11'
-    //         ]);
-    //     } catch (OnlyIntegerAllowedException $e) {
-    //         $this->assertTrue(true);
-    //     }
+        $catched = false;
+        try {
+            $rule->validate([
+                'id' => '11'
+            ]);
+        } catch (OnlyIntegerAllowedException $e) {
+            $catched = true;
+        }
 
-    //     $this->assertTrue(false, 'First element of chained rule does not checked.');
-    // }
+        $this->assertTrue($catched, 'First element of chained rule does not checked.');
+    }
 
-    // /**
-    //  * @test
-    //  * @covers \Simple\Validator\RequiredRule
-    //  * @uses \Simple\Test\TestCase
-    //  * @uses \Simple\Validator\Scaler\IntegerRule
-    //  * @uses \Simple\Validator\Scaler\MaximumRule
-    //  */
-    // public function chain_rules_together_check_second_rule_of_array()
-    // {
-    //     $rule = new RequiredRule('id', [new IntegerRule(), new MaximumRule(10)]);
+    /**
+     * @test
+     * @covers \Simple\Validator\RequiredRule
+     * @uses \Simple\Test\TestCase
+     * @uses \Simple\Validator\Scaler\IntegerRule
+     * @uses \Simple\Validator\Scaler\MaximumRule
+     */
+    public function chain_rules_together_check_second_rule_of_array()
+    {
+        $rule = new RequiredRule('id', [new IntegerRule(), new MaximumRule(10)]);
 
-    //     try {
-    //         $rule->validate([
-    //             'id' => '11'
-    //         ]);
-    //     } catch (OnlyIntegerAllowedException $e) {
-    //         $this->assertTrue(true);
-    //     }
+        $catched = false;
+        try {
+            $rule->validate([
+                'id' => '11'
+            ]);
+        } catch (OnlyIntegerAllowedException $e) {
+            $catched = true;
+        }
 
-    //     $this->assertTrue(false, 'First element of chained rule does not checked.');
-    // }
+        $this->assertTrue($catched, 'First element of chained rule does not checked.');
+    }
 }

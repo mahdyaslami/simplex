@@ -4,7 +4,7 @@ namespace Simple\Validator\Contracts;
 
 abstract class Rule
 {
-    private $next;
+    private $next = null;
 
     /**
      * Create an object with chained rules.
@@ -38,9 +38,18 @@ abstract class Rule
         $this->next = $next;
     }
 
+    protected function getNext()
+    {
+        return $this->next;
+    }
+
     public function validate($value)
     {
         $this->check($value);
+
+        if ($this->getNext()) {
+            $this->getNext()->validate($value);
+        }
     }
 
     /**
