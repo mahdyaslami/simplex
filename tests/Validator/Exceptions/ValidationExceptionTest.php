@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Validator;
+namespace SimpleTests\Validator\Exceptions;
 
 use Simple\Test\TestCase;
 use Simple\Validator\Exceptions\ValidationException;
