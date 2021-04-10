@@ -6,7 +6,7 @@ use Simple\Validator\Contracts\Rule;
 
 class ObjectRule extends Rule
 {
-    public function validate($object)
+    public function check($object)
     {
         //
     }

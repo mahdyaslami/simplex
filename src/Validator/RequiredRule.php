@@ -14,7 +14,7 @@ class RequiredRule extends Rule
         $this->key = $key;
     }
 
-    public function validate($object)
+    public function check($object)
     {
         $isKeyExists = false;
 

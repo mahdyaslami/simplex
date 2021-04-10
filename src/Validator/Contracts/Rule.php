@@ -4,11 +4,17 @@ namespace Simple\Validator\Contracts;
 
 abstract class Rule
 {
+
+    public function validate($value)
+    {
+        $this->check($value);
+    }
+
     /**
-     * Validate value by rules.
+     * check value by rules.
      * 
-     * @param  mixed $value The value you want to validate.
+     * @param  mixed $value The value you want to check.
      * @return void
      */
-    public abstract function validate($value);
+    public abstract function check($value);
 }

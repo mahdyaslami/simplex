@@ -7,7 +7,7 @@ use Simple\Validator\Exceptions\OnlyIntegerAllowedException;
 
 class IntegerRule extends Rule
 {
-    public function validate($value)
+    public function check($value)
     {
         if (!is_int($value)) {
             throw new OnlyIntegerAllowedException();

@@ -6,7 +6,7 @@ use Simple\Validator\Contracts\Rule;
 
 class ArrayRule extends Rule
 {
-    public function validate($items)
+    public function check($items)
     {
         //
     }

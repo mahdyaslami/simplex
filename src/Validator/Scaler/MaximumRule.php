@@ -14,7 +14,7 @@ class MaximumRule extends Rule
         $this->maximum = $maximum;
     }
 
-    public function validate($value)
+    public function check($value)
     {
         if (!is_numeric($value)) {
             throw new Exception('Value must be number.');
