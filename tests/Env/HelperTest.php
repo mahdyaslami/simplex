@@ -9,7 +9,6 @@ final class HelperTest extends TestCase
     /**
      * @test
      * @covers ::env
-     * @uses ::base_path
      */
     public function set_env_with_uppercase_and_get_with_customcase()
     {
@@ -28,7 +27,6 @@ final class HelperTest extends TestCase
     /**
      * @test
      * @covers ::env
-     * @uses ::base_path
      */
     public function set_env_with_lowercase_and_get_with_customcase()
     {
@@ -47,7 +45,6 @@ final class HelperTest extends TestCase
     /**
      * @test
      * @covers ::env
-     * @uses ::base_path
      */
     public function set_env_with_customcase_and_get_with_customcase()
     {

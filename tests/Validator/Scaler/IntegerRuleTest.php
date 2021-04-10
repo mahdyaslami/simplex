@@ -11,7 +11,6 @@ final class IntegerRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\IntegerRule
-     * @uses \Simple\Test\TestCase
      */
     public function validate_int_return_do_not_throw_any_exception()
     {
@@ -25,7 +24,6 @@ final class IntegerRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\IntegerRule
-     * @uses \Simple\Test\TestCase
      */
     public function validate_non_int_throw_exception_with_message()
     {

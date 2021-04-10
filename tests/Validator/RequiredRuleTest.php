@@ -13,7 +13,6 @@ final class RequiredRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\RequiredRule
-     * @uses \Simple\Test\TestCase
      */
     public function throw_exception_when_key_does_not_exists()
     {
@@ -29,7 +28,6 @@ final class RequiredRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\RequiredRule
-     * @uses \Simple\Test\TestCase
      */
     public function does_not_throw_exception_when_key_exists()
     {
@@ -45,7 +43,6 @@ final class RequiredRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\RequiredRule
-     * @uses \Simple\Test\TestCase
      */
     public function work_with_std_object()
     {
@@ -61,9 +58,6 @@ final class RequiredRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\RequiredRule
-     * @uses \Simple\Test\TestCase
-     * @uses \Simple\Validator\Scaler\IntegerRule
-     * @uses \Simple\Validator\Scaler\MaximumRule
      */
     public function chain_rules_together_check_first_rule_of_array()
     {
@@ -84,9 +78,6 @@ final class RequiredRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\RequiredRule
-     * @uses \Simple\Test\TestCase
-     * @uses \Simple\Validator\Scaler\IntegerRule
-     * @uses \Simple\Validator\Scaler\MaximumRule
      */
     public function chain_rules_together_check_second_rule_of_array()
     {

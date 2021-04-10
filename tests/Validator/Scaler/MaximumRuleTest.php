@@ -11,7 +11,6 @@ final class MaximumRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\MaximumRule
-     * @uses \Simple\Test\TestCase
      */
     public function does_not_throw_exception_when_value_is_lower_than_maximum()
     {
@@ -25,7 +24,6 @@ final class MaximumRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\MaximumRule
-     * @uses \Simple\Test\TestCase
      */
     public function does_not_throw_exception_when_value_is_equal_to_maximum()
     {
@@ -39,7 +37,6 @@ final class MaximumRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\MaximumRule
-     * @uses \Simple\Test\TestCase
      */
     public function throw_exception_when_value_is_greater_than_maximum()
     {
@@ -58,7 +55,6 @@ final class MaximumRuleTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Scaler\MaximumRule
-     * @uses \Simple\Test\TestCase
      */
     public function throw_exception_when_value_is_not_number()
     {

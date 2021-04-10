@@ -13,7 +13,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses \Simple\Test\TestCase
      */
     public function route_with_anonymous_func()
     {
@@ -31,7 +30,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses \Simple\Test\TestCase
      */
     public function route_with_class_func()
     {
@@ -47,8 +45,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses Simple\FastRoute\Exceptions\NotFoundException
-     * @uses Simple\Test\TestCase
      */
     public function route_not_found()
     {
@@ -66,8 +62,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses Simple\FastRoute\Exceptions\MethodNotAllowedException
-     * @uses Simple\Test\TestCase
      */
     public function method_not_allowed()
     {
@@ -85,7 +79,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses Simple\Test\TestCase
      */
     public function can_get_app_exception()
     {
@@ -105,8 +98,6 @@ final class RoutingTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Provider
-     * @uses Simple\FastRoute\Exceptions\NotFoundException
-     * @uses Simple\Test\TestCase
      */
     public function using_error_handler_work()
     {

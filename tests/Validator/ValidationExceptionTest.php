@@ -10,7 +10,6 @@ final class ValidationExceptionTest extends TestCase
     /**
      * @test
      * @covers \Simple\Validator\Exceptions\ValidationException
-     * @uses \Simple\Test\TestCase
      */
     public function get_error_arrays()
     {

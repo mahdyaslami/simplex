@@ -12,7 +12,6 @@ final class ExceptionsTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Exceptions\MethodNotAllowedException
-     * @uses \Simple\Test\TestCase
      */
     public function create_method_not_allowed_exception_with_correct_message()
     {
@@ -24,7 +23,6 @@ final class ExceptionsTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Exceptions\MethodNotAllowedException
-     * @uses \Simple\Test\TestCase
      */
     public function method_not_allowed_extended_http_exception()
     {
@@ -36,7 +34,6 @@ final class ExceptionsTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Exceptions\NotFoundException
-     * @uses \Simple\Test\TestCase
      */
     public function create_not_fount_exception_with_correct_message()
     {
@@ -48,7 +45,6 @@ final class ExceptionsTest extends TestCase
     /**
      * @test
      * @covers \Simple\FastRoute\Exceptions\NotFoundException
-     * @uses \Simple\Test\TestCase
      */
     public function not_found_extended_http_exception()
     {
