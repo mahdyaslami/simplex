@@ -9,8 +9,10 @@ class RequiredRule extends Rule
 {
     private string $key;
 
-    public function __construct(string $key)
+    public function __construct(string $key, array $rules = [])
     {
+        parent::__construct($rules);
+
         $this->key = $key;
     }
 
