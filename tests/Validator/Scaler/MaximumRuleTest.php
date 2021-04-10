@@ -3,6 +3,7 @@
 namespace SimpleTests\Validator\Scaler;
 
 use Simple\Test\TestCase;
+use Simple\Validator\Exceptions\GreaterNumberNotAllowedException;
 use Simple\Validator\Scaler\MaximumRule;
 
 final class MaximumRuleTest extends TestCase
@@ -44,11 +45,14 @@ final class MaximumRuleTest extends TestCase
     {
         $rule = new MaximumRule(10);
 
+        $catched = false;
         try {
             $rule->validate(11);
-        } catch(\Throwable $e) {
-            $this->assertEquals('Value must be lower than 10.', $e->getMessage(), 'Greater value than maximum not allowed.');
+        } catch (GreaterNumberNotAllowedException $e) {
+            $catched = true;
         }
+
+        $this->assertTrue($catched, 'Greater value than maximum not allowed.');
     }
 
     /**
@@ -60,10 +64,13 @@ final class MaximumRuleTest extends TestCase
     {
         $rule = new MaximumRule(10);
 
+        $catched = false;
         try {
             $rule->validate('aslami');
-        } catch(\Throwable $e) {
-            $this->assertEquals('Value must be number.', $e->getMessage(), 'None number value not allowed.');
+        } catch (\Throwable $e) {
+            $catched = true;
         }
+
+        $this->assertTrue($catched, 'None number value not allowed.');
     }
 }

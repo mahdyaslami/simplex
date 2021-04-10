@@ -2,8 +2,9 @@
 
 namespace Simple\Validator\Scaler;
 
-use Exception;
 use Simple\Validator\Contracts\Rule;
+use Simple\Validator\Exceptions\GreaterNumberNotAllowedException;
+use Simple\Validator\Exceptions\OnlyNumberAllowedException;
 
 class MaximumRule extends Rule
 {
@@ -17,11 +18,11 @@ class MaximumRule extends Rule
     public function check($value)
     {
         if (!is_numeric($value)) {
-            throw new Exception('Value must be number.');
+            throw new OnlyNumberAllowedException();
         }
 
         if ($value > $this->maximum) {
-            throw new Exception("Value must be lower than {$this->maximum}.");
+            throw new GreaterNumberNotAllowedException($this->maximum);
         }
     }
 }
