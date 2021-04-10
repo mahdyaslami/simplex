@@ -20,7 +20,7 @@ class RequiredRule extends Rule
 
         if (is_object($object)) {
             $isKeyExists = isset($object->{$this->key});
-        } else  {
+        } else {
             $isKeyExists = isset($object[$this->key]);
         }
 
