@@ -13,12 +13,8 @@ abstract class KeyValueRule extends Rule
         $this->key = $key;
     }
 
-    public function validate($value)
+    public function getNextValue($value)
     {
-        $this->check($value);
-
-        if ($this->getNext()) {
-            $this->getNext()->validate($value[$this->key]);
-        }
+        return $value[$this->key];
     }
 }

@@ -1,8 +1,7 @@
 <?php
 
-namespace SimpleTests\Validator;
+namespace SimpleTests\Validator\Contracts;
 
-use Mockery;
 use Simple\Test\TestCase;
 use Simple\Validator\Contracts\Rule;
 
@@ -52,5 +51,16 @@ final class RuleTest extends TestCase
         $this->assertEquals($first, $rule->getNext());
         $this->assertEquals($second, $first->getNext());
         $this->assertEquals(null, $second->getNext());
+    }
+
+    /**
+     * @test
+     * @covers \Simple\Validator\Contracts\Rule
+     */
+    public function get_next_value_get_value_exactly()
+    {
+        $rule = new TestRule();
+
+        $this->assertEquals(10, $rule->getNextValue(10));
     }
 }

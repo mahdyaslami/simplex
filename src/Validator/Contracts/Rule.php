@@ -33,14 +33,9 @@ abstract class Rule
         return true;
     }
 
-    public function setNext(Rule $next)
+    protected function setNext(Rule $next)
     {
         $this->next = $next;
-    }
-
-    public function getNext()
-    {
-        return $this->next;
     }
 
     public function validate($value)
@@ -48,8 +43,20 @@ abstract class Rule
         $this->check($value);
 
         if ($next = $this->getNext()) {
-            $next->validate($value);
+            $next->validate(
+                $this->getNext($value)
+            );
         }
+    }
+
+    public function getNext()
+    {
+        return $this->next;
+    }
+
+    public function getNextValue($value)
+    {
+        return $value;
     }
 
     /**
