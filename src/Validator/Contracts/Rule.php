@@ -14,11 +14,11 @@ abstract class Rule
     public function __construct(array $rules = [])
     {
         if ($this->chain($rules)) {
-            $this->next = $rules[0];
+            $this->setNext($rules[0]);
         }
     }
 
-    private function chain($rules)
+    protected function chain($rules)
     {
         $count = count($rules);
 
@@ -38,7 +38,7 @@ abstract class Rule
         $this->next = $next;
     }
 
-    protected function getNext()
+    public function getNext()
     {
         return $this->next;
     }
@@ -47,8 +47,8 @@ abstract class Rule
     {
         $this->check($value);
 
-        if ($this->getNext()) {
-            $this->getNext()->validate($value);
+        if ($next = $this->getNext()) {
+            $next->validate($value);
         }
     }
 
