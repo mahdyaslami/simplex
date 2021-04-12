@@ -2,6 +2,7 @@
 
 namespace SimpleTests\Validator\Contracts;
 
+use Exception;
 use Simple\Test\TestCase;
 use Simple\Validator\Contracts\Rule;
 
@@ -10,6 +11,14 @@ class TestRule extends Rule
     public function check($value)
     {
         //
+    }
+}
+
+class IncorrectRule extends rule
+{
+    public function check($value)
+    {
+        throw new Exception('Incorrect.');
     }
 }
 
@@ -62,5 +71,73 @@ final class RuleTest extends TestCase
         $rule = new TestRule();
 
         $this->assertEquals(10, $rule->getNextValue(10));
+    }
+
+    /**
+     * @test
+     * @covers \Simple\Validator\Contracts\Rule
+     */
+    public function validate_incorrect_without_chain()
+    {
+        $rule = new IncorrectRule();
+
+        try {
+            $rule->validate(10);
+        } catch (\Throwable $e) {
+            $this->assertEquals('Incorrect.', $e->getMessage());
+        }
+    }
+
+    /**
+     * @test
+     * @covers \Simple\Validator\Contracts\Rule
+     */
+    public function validate_incorrect_with_chain()
+    {
+        $nextRule = new IncorrectRule();
+        $rule = new TestRule([$nextRule]);
+
+        try {
+            $rule->validate(10);
+        } catch (\Throwable $e) {
+            $this->assertEquals('Incorrect.', $e->getMessage());
+        }
+    }
+
+    /**
+     * @test
+     * @covers \Simple\Validator\Contracts\Rule
+     */
+    public function validate_without_chain()
+    {
+        $rule = new TestRule();
+
+        $catched = false;
+        try {
+            $rule->validate(10);
+        } catch (\Throwable $e) {
+            $catched = true;
+        }
+
+        $this->assertFalse($catched, 'Validate without chain failed.');
+    }
+
+    /**
+     * @test
+     * @covers \Simple\Validator\Contracts\Rule
+     */
+    public function validate_with_chain()
+    {
+        $nextRule = new TestRule();
+        $rule = new TestRule([$nextRule]);
+
+        $catched = false;
+        try {
+            $rule->validate(10);
+        } catch (\Throwable $e) {
+            $catched = true;
+        }
+
+        $this->assertFalse($catched, 'Validate without chain failed.');
     }
 }
