@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\FastRoute;
+namespace Tests\FastRoute;
 
 use FastRoute\RouteCollector;
 use Simple\FastRoute\Exceptions\MethodNotAllowedException;

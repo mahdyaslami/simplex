@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Validator\Scaler;
+namespace Tests\Validator\Scaler;
 
 use Simple\Test\TestCase;
 use Simple\Validator\Exceptions\GreaterNumberNotAllowedException;

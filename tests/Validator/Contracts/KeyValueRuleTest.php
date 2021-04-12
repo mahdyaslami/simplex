@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Validator\Contracts;
+namespace Tests\Validator\Contracts;
 
 use Simple\Test\TestCase;
 use Simple\Validator\Contracts\KeyValueRule;

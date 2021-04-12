@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Validator;
+namespace Tests\Validator;
 
 use Simple\Test\TestCase;
 use Simple\Validator\Exceptions\OnlyIntegerAllowedException;

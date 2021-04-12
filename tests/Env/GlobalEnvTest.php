@@ -1,6 +1,6 @@
 <?php
 
-namespace SimpleTests\Env;
+namespace Tests\Env;
 
 use Simple\Env\Provider;
 use Simple\Test\TestCase;
