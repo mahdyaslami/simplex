@@ -1,9 +1,0 @@
-class TestCase
-!!!130303.php!!!	get(in path : )
-
-        $_SERVER['REQUEST_METHOD'] = 'GET';
-        $_SERVER['REQUEST_URI'] = $path;
-!!!130431.php!!!	post(in path : )
-
-        $_SERVER['REQUEST_METHOD'] = 'POST';
-        $_SERVER['REQUEST_URI'] = $path;
