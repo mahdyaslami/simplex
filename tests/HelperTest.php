@@ -2,7 +2,7 @@
 
 namespace SimpleTests;
 
-use Simple\Test\TestCase;
+use Simplex\Test\TestCase;
 
 final class HelperTest extends TestCase
 {
