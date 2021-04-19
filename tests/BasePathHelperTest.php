@@ -4,7 +4,7 @@ namespace SimpleTests;
 
 use Simplex\Test\TestCase;
 
-final class HelperTest extends TestCase
+final class BasePathHelperTest extends TestCase
 {
     /**
      * @test
