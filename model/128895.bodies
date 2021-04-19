@@ -1,3 +1,0 @@
-class NotFoundException
-!!!130047.php!!!	createWithMessage(in path : )
-        return new self(sprintf('`%s` Not found.', $path), 404);
