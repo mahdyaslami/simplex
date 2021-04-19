@@ -1,6 +1,6 @@
 <?php
 
-namespace Simple\Test;
+namespace Simplex\Test;
 
 use PHPUnit\Framework\TestCase as FrameworkTestCase;
 

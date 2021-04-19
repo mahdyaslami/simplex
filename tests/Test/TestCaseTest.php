@@ -2,13 +2,13 @@
 
 namespace Tests\Test;
 
-use Simple\Test\TestCase;
+use Simplex\Test\TestCase;
 
 final class TestCaseTest extends TestCase
 {
     /**
      * @test
-     * @covers \Simple\Test\TestCase
+     * @covers \Simplex\Test\TestCase
      */
     public function check_get_fill_request_uri_and_request_method()
     {
@@ -20,7 +20,7 @@ final class TestCaseTest extends TestCase
 
     /**
      * @test
-     * @covers \Simple\Test\TestCase
+     * @covers \Simplex\Test\TestCase
      */
     public function check_post_fill_request_uri_and_request_method()
     {
