@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Env;
+namespace Tests;
 
 use Simplex\Test\TestCase;
 
