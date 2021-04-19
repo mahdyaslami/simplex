@@ -13,7 +13,7 @@ final class ApplicationTest extends TestCase
 {
     /**
      * @test
-     * @covers \Simplex\Test\TestCase
+     * @covers \Simplex\Http\Application
      */
     public function app_generate_request_and_call_request_handler()
     {
@@ -41,7 +41,7 @@ final class ApplicationTest extends TestCase
 
     /**
      * @test
-     * @covers \Simplex\Test\TestCase
+     * @covers \Simplex\Http\Application
      */
     public function app_call_exception_handler()
     {
