@@ -39,7 +39,6 @@ final class RequestHandlerTest extends TestCase
      */
     public function get_router_for_creating_route()
     {
-        $request = new ServerRequest([], [], '/', 'GET');
         $requestHandler = new RequestHandler('');
 
         $router = $requestHandler->getRouter();
