@@ -2,26 +2,29 @@
 
 namespace Simplex\Http;
 
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Simplex\Contracts\ApplicationInterface;
 use Simplex\Contracts\ExceptionHandlerInterface;
 use Simplex\Contracts\RequestFactoryInterface;
+use Simplex\Contracts\ResponseEmitterInterface;
 
 class Application implements ApplicationInterface
 {
     protected $requestFactory;
     protected $requestHandler;
     protected $exceptionHandler;
+    protected $responseEmitter;
 
     public function __construct(
         RequestFactoryInterface $requestFactory,
         RequestHandlerInterface $requestHandler,
-        ExceptionHandlerInterface $exceptionHandler
+        ExceptionHandlerInterface $exceptionHandler,
+        ResponseEmitterInterface $responseEmitter
     ) {
         $this->requestFactory = $requestFactory;
         $this->requestHandler = $requestHandler;
         $this->exceptionHandler = $exceptionHandler;
+        $this->responseEmitter = $responseEmitter;
     }
 
     public function run()
@@ -35,12 +38,7 @@ class Application implements ApplicationInterface
         } catch (\Throwable $e) {
             $response = $this->exceptionHandler->handle($e, $request);
         } finally {
-            $this->terminate($response);
+            $this->responseEmitter->emit($response);
         }
-    }
-
-    protected function terminate(ResponseInterface $response)
-    {
-        // TODO
     }
 }

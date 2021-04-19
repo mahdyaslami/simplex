@@ -7,6 +7,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Simplex\Test\TestCase;
 use Simplex\Contracts\ExceptionHandlerInterface;
 use Simplex\Contracts\RequestFactoryInterface;
+use Simplex\Contracts\ResponseEmitterInterface;
 use Simplex\Http\Application;
 
 final class ApplicationTest extends TestCase
@@ -28,10 +29,14 @@ final class ApplicationTest extends TestCase
         $exceptionHandler = \Mockery::mock(ExceptionHandlerInterface::class);
         $exceptionHandler->shouldNotReceive('handle');
 
+        $responseEmitter = \Mockery::mock(ResponseEmitterInterface::class);
+        $responseEmitter->shouldReceive('emit')->once();
+
         (new Application(
             $requestFactory,
             $requestHandler,
-            $exceptionHandler
+            $exceptionHandler,
+            $responseEmitter
         ))->run();
 
         \Mockery::close();
@@ -56,10 +61,14 @@ final class ApplicationTest extends TestCase
         $exceptionHandler = \Mockery::mock(ExceptionHandlerInterface::class);
         $exceptionHandler->shouldReceive('handle')->once();
 
+        $responseEmitter = \Mockery::mock(ResponseEmitterInterface::class);
+        $responseEmitter->shouldReceive('emit')->once();
+
         (new Application(
             $requestFactory,
             $requestHandler,
-            $exceptionHandler
+            $exceptionHandler,
+            $responseEmitter
         ))->run();
 
         \Mockery::close();
