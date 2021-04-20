@@ -12,7 +12,8 @@ interface ResponseEmitterInterface
     /**
      * Get a response and fill output buffer and set headers and etc.
      * 
-     * @param \Psr\Http\Message\ResponseInterface $response
+     * @param  \Psr\Http\Message\ResponseInterface $response
+     * @return void
      */
     public function emit(ResponseInterface $response);
 }

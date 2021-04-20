@@ -12,7 +12,7 @@ final class BasePathHelperTest extends TestCase
      */
     public function base_path_will_concate_path()
     {
-        $GLOBALS['BASE_PATH'] = '/base_path';
+        $_ENV['BASE_PATH'] = '/base_path';
 
         $this->assertEquals('/base_path' . DIRECTORY_SEPARATOR . 'path', base_path('path'), 'Path does not concated.');
     }
@@ -23,7 +23,7 @@ final class BasePathHelperTest extends TestCase
      */
     public function does_not_have_trailing_slash_when_path_is_empty()
     {
-        $GLOBALS['BASE_PATH'] = '/base_path';
+        $_ENV['BASE_PATH'] = '/base_path';
 
         $this->assertEquals('/base_path', base_path(), 'Trailing slash with emtpy path not allowed.');
     }
