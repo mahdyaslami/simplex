@@ -8,6 +8,9 @@ use Simplex\Contracts\ExceptionHandlerInterface;
 use Simplex\Contracts\RequestFactoryInterface;
 use Simplex\Contracts\ResponseEmitterInterface;
 
+/**
+ * A web application.
+ */
 class Application implements ApplicationInterface
 {
     protected $requestFactory;
@@ -15,6 +18,15 @@ class Application implements ApplicationInterface
     protected $exceptionHandler;
     protected $responseEmitter;
 
+    /**
+     * Create new application instance.
+     * 
+     * @param  RequestFactoryInterface $requestFactory
+     * @param  RequestHandlerInterface $requestHandler
+     * @param  ExceptionHandlerInterface $exceptionHandler
+     * @param  ResponseEmitterInterface $responseEmitter
+     * @return void
+     */
     public function __construct(
         RequestFactoryInterface $requestFactory,
         RequestHandlerInterface $requestHandler,
@@ -27,6 +39,12 @@ class Application implements ApplicationInterface
         $this->responseEmitter = $responseEmitter;
     }
 
+    /**
+     * Run application and execute error handler if 
+     * error happened.
+     * 
+     * @return void
+     */
     public function run()
     {
         $request = null;

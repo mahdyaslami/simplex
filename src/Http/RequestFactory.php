@@ -8,6 +8,9 @@ use Simplex\Contracts\RequestFactoryInterface;
 
 class RequestFactory implements RequestFactoryInterface
 {
+    /**
+     * {@inheritdoc}
+     */
     public function generate(): ServerRequestInterface
     {
         return ServerRequestFactory::fromGlobals($_SERVER, $_GET, $_POST, $_COOKIE, $_FILES);
