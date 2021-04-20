@@ -15,7 +15,15 @@ class RequestHandler implements RequestHandlerInterface
 
     protected Router $router;
 
-    public function __construct($pathToCacheFile, $cacheEnabled = true, $ttl = 86400)
+    /**
+     * Create instance of request handler.
+     * 
+     * @param  string $pathToCacheFile
+     * @param  bool $cacheEnabled
+     * @param  int $ttl
+     * @return void
+     */
+    public function __construct(string $pathToCacheFile, $cacheEnabled = true, $ttl = 86400)
     {
         $cacheStore = new FileCache($pathToCacheFile, $ttl);
 
@@ -24,11 +32,19 @@ class RequestHandler implements RequestHandlerInterface
         $this->cacheRouter = new CacheRouter([$this, 'getRouter'], $cacheStore, $cacheEnabled);
     }
 
+    /**
+     * Get router.
+     * 
+     * @return \League\Route\Router
+     */
     public function getRouter(): Router
     {
         return $this->router;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
         return $this->router->dispatch($request);

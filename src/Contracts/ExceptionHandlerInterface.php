@@ -16,6 +16,10 @@ interface ExceptionHandlerInterface
      * Handles an exception and produces a response.
      *
      * May call other collaborating code to generate the response.
+     * 
+     * @param  \Throwable $exception
+     * @param  null|\Psr\Http\Message\ServerRequestInterface $request
+     * @return \Psr\Http\Message\ResponseInterface
      */
     public function handle(\Throwable $exception, ServerRequestInterface $request = null): ResponseInterface;
 }

@@ -9,7 +9,7 @@ if (!function_exists('base_path')) {
      */
     function base_path($path = '')
     {
-        return $GLOBALS['BASE_PATH'] . ($path ? DIRECTORY_SEPARATOR . $path : $path);
+        return $_ENV['BASE_PATH'] . ($path ? DIRECTORY_SEPARATOR . $path : $path);
     }
 }
 

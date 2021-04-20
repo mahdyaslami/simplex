@@ -11,6 +11,8 @@ interface RequestFactoryInterface
 {
     /**
      * Create request based on PSR.
+     * 
+     * @return \Psr\Http\Message\ServerRequestInterface
      */
     public function generate(): ServerRequestInterface;
 }
