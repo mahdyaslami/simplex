@@ -36,3 +36,32 @@ if (!function_exists('env')) {
         return $_ENV[$key];
     }
 }
+
+if (!function_exists('container')) {
+    /**
+     * Get container instance.
+     * 
+     * @return \League\Container\Container
+     */
+    function container(): \League\Container\Container
+    {
+        if (!isset($GLOBALS['container'])) {
+            $GLOBALS['container'] = new \League\Container\Container;
+        }
+
+        return $GLOBALS['container'];
+    }
+}
+
+if (!function_exists('resolve')) {
+    /**
+     * Finds an entry of the container by its identifier and returns it.
+     * 
+     * @param  string $id
+     * @return mixed
+     */
+    function resolve(string $id)
+    {
+        return container()->get($id);
+    }
+}
