@@ -41,15 +41,11 @@ if (!function_exists('container')) {
     /**
      * Get container instance.
      * 
-     * @return \League\Container\Container
+     * @return \Simplex\Facade\Container
      */
-    function container(): \League\Container\Container
+    function container(): \Simplex\Facade\Container
     {
-        if (!isset($GLOBALS['container'])) {
-            $GLOBALS['container'] = new \League\Container\Container;
-        }
-
-        return $GLOBALS['container'];
+        return \Simplex\Facade\Container::getInstance();
     }
 }
 

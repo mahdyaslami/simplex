@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use League\Container\Container;
 use Mockery;
+use Simplex\Facade\Container;
 use Simplex\Test\TestCase;
 
 final class ContainerHelperTest extends TestCase
@@ -12,21 +12,8 @@ final class ContainerHelperTest extends TestCase
      * @test
      * @covers ::container
      */
-    public function get_container_when_global_is_null()
+    public function get_container_instance()
     {
-        $GLOBALS['container'] = null;
-
-        $this->assertInstanceOf(Container::class, container(), 'container function should return a Container.');
-    }
-
-    /**
-     * @test
-     * @covers ::container
-     */
-    public function get_container_when_global_has_value()
-    {
-        $GLOBALS['container'] = new Container();
-
         $this->assertInstanceOf(Container::class, container(), 'container function should return a Container.');
     }
 
@@ -36,12 +23,11 @@ final class ContainerHelperTest extends TestCase
      */
     public function resolve_should_call_get_method()
     {
-        $mock = Mockery::mock(Container::class);
-        $mock->shouldReceive('get')->once();
+        $mock = Mockery::mock();
 
-        $GLOBALS['container'] = $mock;
+        container()->bind('temp', $mock);
 
-        resolve('temp');
+        $this->assertEquals($mock, resolve('temp'), 'Returned object does not true.');
 
         Mockery::close();
 
