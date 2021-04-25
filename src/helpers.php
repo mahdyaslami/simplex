@@ -36,3 +36,28 @@ if (!function_exists('env')) {
         return $_ENV[$key];
     }
 }
+
+if (!function_exists('container')) {
+    /**
+     * Get container instance.
+     * 
+     * @return \Simplex\Facade\Container
+     */
+    function container(): \Simplex\Facade\Container
+    {
+        return \Simplex\Facade\Container::getInstance();
+    }
+}
+
+if (!function_exists('resolve')) {
+    /**
+     * Finds an entry of the container by its identifier and returns it.
+     * 
+     * @param  string $id
+     * @return mixed
+     */
+    function resolve(string $id)
+    {
+        return container()->get($id);
+    }
+}

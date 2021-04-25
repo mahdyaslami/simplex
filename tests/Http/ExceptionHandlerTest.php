@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Test;
+namespace Tests\Http;
 
 use Exception;
 use Laminas\Diactoros\Response;
