@@ -1,13 +1,11 @@
 <?php
 
-namespace Tests\Test;
+namespace Tests\Http;
 
-use Laminas\Diactoros\Request;
 use Laminas\Diactoros\Response;
 use Laminas\Diactoros\ServerRequest;
 use League\Route\Router;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 use Simplex\Test\TestCase;
 use Simplex\Http\RequestHandler;
 

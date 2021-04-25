@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Test;
+namespace Tests\Http;
 
 use Psr\Http\Message\ServerRequestInterface;
 use Simplex\Test\TestCase;
