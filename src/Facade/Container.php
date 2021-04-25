@@ -3,6 +3,7 @@
 namespace Simplex\Facade;
 
 use League\Container\Container as LeagueContainer;
+use League\Container\Exception\ContainerException;
 
 class Container
 {
@@ -24,7 +25,11 @@ class Container
      */
     public function bind(string $id, $concrete)
     {
-        $this->container->add($id, $concrete);
+        if ($this->container->has($id)) {
+            throw new ContainerException("The $id identifier is already exists.", 1);
+        } else {
+            $this->container->add($id, $concrete);
+        }
     }
 
     /**
