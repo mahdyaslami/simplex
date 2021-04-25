@@ -45,6 +45,20 @@ class Container
     }
 
     /**
+     * Change concrete of an existing id.
+     * 
+     * @param  string $id
+     * @param  mixed  $concrete
+     * @return void
+     */
+    public function swap(string $id, $concrete)
+    {
+        $definition = $this->container->extend($id);
+
+        $definition->setConcrete($concrete);
+    }
+
+    /**
      * Return true if container can return object for identifier.
      * 
      * @param string $id — Identifier of the entry to look for.

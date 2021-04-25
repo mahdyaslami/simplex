@@ -2,6 +2,7 @@
 
 namespace Tests\Test;
 
+use DateTime;
 use League\Container\Exception\ContainerException;
 use Mockery;
 use Simplex\Facade\Container;
@@ -59,10 +60,10 @@ final class ContainerTest extends TestCase
     {
         $classname = 'temp3';
         $this->container()->bind($classname, function () {
-            return Mockery::mock();
+            return new DateTime();
         });
 
-        $this->assertEquals(
+        $this->assertNotEquals(
             $this->container()->get($classname),
             $this->container()->get($classname)
         );
@@ -182,5 +183,25 @@ final class ContainerTest extends TestCase
         }
 
         $this->assertTrue($catched);
+    }
+
+    /**
+     * @test
+     * @covers \Simplex\Facade\Container::swap
+     */
+    public function swap_method_change_existing_id()
+    {
+        $classname = 'temp11';
+        $this->container()->bind($classname, Mockery::mock());
+
+        $mock =  Mockery::mock();
+        $mock->shouldReceive('get')->once();
+        $this->container()->swap($classname, $mock);
+
+        $this->container()->get($classname)->get();
+
+        Mockery::close();
+
+        $this->assertTrue(true);
     }
 }
