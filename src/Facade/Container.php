@@ -6,7 +6,7 @@ use League\Container\Container as LeagueContainer;
 
 class Container
 {
-    private $self = null;
+    private static $self = null;
 
     private $container;
 
@@ -68,10 +68,10 @@ class Container
      */
     public static function getInstance()
     {
-        if (is_null($this->self)) {
-            $this->self = new static;
+        if (is_null(static::$self)) {
+            static::$self = new static;
         }
 
-        return $this->self;
+        return static::$self;
     }
 }
