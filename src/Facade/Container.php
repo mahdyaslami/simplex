@@ -66,7 +66,7 @@ class Container
      * 
      * @return $this
      */
-    public function getInstance()
+    public static function getInstance()
     {
         if (is_null($this->self)) {
             $this->self = new static;

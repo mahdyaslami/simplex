@@ -45,7 +45,11 @@ if (!function_exists('container')) {
      */
     function container(): \League\Container\Container
     {
-        return \Simplex\Facade\Container
+        if (!isset($GLOBALS['container'])) {
+            $GLOBALS['container'] = new \League\Container\Container;
+        }
+
+        return $GLOBALS['container'];
     }
 }
 
