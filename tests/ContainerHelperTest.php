@@ -11,6 +11,8 @@ final class ContainerHelperTest extends TestCase
     /**
      * @test
      * @covers ::container
+     * @covers \Simplex\Facade\Container::getInstance
+     * @covers \Simplex\Facade\Container::__construct
      */
     public function get_container_instance()
     {
@@ -20,6 +22,8 @@ final class ContainerHelperTest extends TestCase
     /**
      * @test
      * @covers ::resolve
+     * @covers \Simplex\Facade\Container::getInstance
+     * @covers \Simplex\Facade\Container::__construct
      */
     public function resolve_should_call_get_method()
     {
